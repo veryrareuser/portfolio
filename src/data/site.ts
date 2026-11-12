@@ -25,7 +25,6 @@ export const site = {
   githubHandle: 'veryrareuser',
   instagramUrl: 'https://instagram.com/_carlossaragih',
   instagramHandle: '@_carlossaragih',
-  phone: '',
   liveUrl: 'https://veryrareuser.github.io/portfolio/',
 } as const
 
