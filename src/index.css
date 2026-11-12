@@ -1,0 +1,223 @@
+@import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   BRUTALISM DESIGN SYSTEM
+   Flat saturated fills, 4px black borders, hard offset shadows, square
+   corners, zero easing. Every token below is exposed to Tailwind via @theme
+   (bg-brut-red, text-brut-black, border-brut-black, font-brut-mono, ...).
+--------------------------------------------------------------------------- */
+@theme {
+  --color-brut-red: #ff0000;
+  --color-brut-blue: #0000ff;
+  --color-brut-yellow: #ffff00;
+  --color-brut-black: #000000;
+  --color-brut-white: #ffffff;
+  --color-brut-green: #00ff00;
+  --color-brut-magenta: #ff00ff;
+
+  /* Accessible gray for the big index numbers: #6E6E6E on #FFFFFF = 5.09:1,
+     which clears WCAG AA (4.5:1) even for normal text. #B8B8B8 would only
+     reach ~2.0:1 and fail AA. */
+  --color-brut-gray: #6e6e6e;
+
+  --font-brut-sans: "Archivo", Arial, Helvetica, sans-serif;
+  --font-brut-display: "Archivo Black", "Arial Black", Arial, Helvetica, sans-serif;
+  --font-brut-mono: "Courier New", Courier, monospace;
+}
+
+:root {
+  --brut-red: #ff0000;
+  --brut-blue: #0000ff;
+  --brut-yellow: #ffff00;
+  --brut-black: #000000;
+  --brut-white: #ffffff;
+  --brut-green: #00ff00;
+  --brut-magenta: #ff00ff;
+  --brut-gray: #6e6e6e;
+}
+
+@layer base {
+  /* Brutalism: no curves, no easing, anywhere. */
+  *,
+  *::before,
+  *::after {
+    border-radius: 0;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    background: var(--brut-white);
+    color: var(--brut-black);
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1 {
+    font-size: clamp(2.5rem, 9vw, 7rem);
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-brut-display);
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 1;
+    letter-spacing: -0.025em;
+  }
+
+  /* Visible focus everywhere, 4px solid blue with offset. */
+  :focus-visible {
+    outline: 4px solid var(--brut-blue);
+    outline-offset: 4px;
+  }
+
+  ::selection {
+    background: var(--brut-black);
+    color: var(--brut-yellow);
+  }
+}
+
+/* Respect the OS "reduce motion" setting: brutalism is already instant, but
+   smooth scrolling and any hover transform are disabled here. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+@layer components {
+  /* Visually hidden but reachable by screen readers and keyboards. */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Skip link: off-screen until focused. */
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    padding: 0.75rem 1.25rem;
+    border: 4px solid var(--brut-black);
+    background: var(--brut-yellow);
+    color: var(--brut-black);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    left: 0;
+  }
+
+  /* Shared section heading. */
+  .section-title {
+    margin: 0 0 2.5rem;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  /* Monospace utility: nav, eyebrows, chips, body copy. */
+  .mono {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 400;
+  }
+
+  /* Work card. Flat fill, 4px black border, hard 8px offset shadow. */
+  .card {
+    padding: 2rem;
+    border: 4px solid var(--brut-black);
+    background: var(--brut-yellow);
+    box-shadow: 8px 8px 0 var(--brut-black);
+  }
+
+  /* Black text on yellow, green, magenta and red fills;
+     white text only on blue and black. */
+  .card--yellow {
+    background: var(--brut-yellow);
+    color: var(--brut-black);
+  }
+  .card--red {
+    background: var(--brut-red);
+    color: var(--brut-black);
+  }
+  .card--green {
+    background: var(--brut-green);
+    color: var(--brut-black);
+  }
+  .card--magenta {
+    background: var(--brut-magenta);
+    color: var(--brut-black);
+  }
+  .card--blue {
+    background: var(--brut-blue);
+    color: var(--brut-white);
+  }
+  .card--black {
+    background: var(--brut-black);
+    color: var(--brut-white);
+  }
+
+  /* Two column work grid, collapses to one column under 640px. */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Brutalist button: hard shadow that collapses on press. */
+  .button {
+    display: inline-block;
+    padding: 0.5rem 1.5rem;
+    border: 4px solid var(--brut-black);
+    background: var(--brut-white);
+    color: var(--brut-black);
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--brut-black);
+  }
+
+  .button:active {
+    transform: translate(4px, 4px);
+    box-shadow: none;
+  }
+
+  .button:focus-visible {
+    outline: 4px solid var(--brut-blue);
+    outline-offset: 4px;
+  }
+
+  .nav a:hover {
+    text-decoration: line-through;
+  }
+}

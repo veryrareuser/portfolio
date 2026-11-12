@@ -1,0 +1,27 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  background: var(--brut-black);
+  color: var(--brut-white);
+  border-top: 4px solid var(--brut-white);
+}
+
+.footer-copy {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--brut-white);
+}
+
+@media (max-width: 640px) {
+  .footer {
+    padding: 1.25rem;
+    justify-content: center;
+    text-align: center;
+  }
+}
