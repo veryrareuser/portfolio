@@ -27,6 +27,11 @@ export default function Contact() {
             </a>
           </li>
           <li>
+            <a className="mono" href={site.instagramUrl} target="_blank" rel="noreferrer noopener">
+              Instagram <span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
             <a className="mono" href={`mailto:${site.email}`}>
               Email <span aria-hidden="true">↗</span>
             </a>

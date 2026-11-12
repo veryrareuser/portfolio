@@ -62,13 +62,14 @@ export const projects: Project[] = [
     color: 'blue',
   },
   {
-    id: 'dtw-uts-website',
+    id: 'glowing-fiesta',
     category: 'Frontend / Static',
-    title: 'DTW UTS Website',
+    title: 'Dark Portfolio',
     description:
-      'Static front-end website built for DTW UTS — hand-written HTML, CSS and JavaScript with no framework overhead.',
-    stack: ['HTML', 'CSS', 'JavaScript'],
+      'Dark-mode personal portfolio in vanilla HTML, CSS and JavaScript — particle canvas background, typing effect, scroll-spy navigation, project modals and a rotating skill orbit.',
+    stack: ['HTML', 'CSS', 'JavaScript', 'Canvas'],
     repoUrl: 'https://github.com/veryrareuser/glowing-fiesta',
+    liveUrl: 'https://veryrareuser.github.io/glowing-fiesta/',
     color: 'magenta',
   },
   {
@@ -76,19 +77,21 @@ export const projects: Project[] = [
     category: 'HTML / CSS',
     title: 'Magang Portfolio',
     description:
-      'Static portfolio site with photo galleries and an automated GitHub Pages deploy workflow wired straight from the repository.',
-    stack: ['HTML', 'CSS', 'GitHub Actions'],
+      'Static Bootstrap portfolio with a sunset photo gallery, inline SVG wave dividers and a contact form, deployed automatically by a GitHub Actions workflow.',
+    stack: ['HTML', 'CSS', 'Bootstrap 5', 'GitHub Actions'],
     repoUrl: 'https://github.com/veryrareuser/magang',
+    liveUrl: 'https://veryrareuser.github.io/magang/',
     color: 'yellow',
   },
   {
     id: 'carlos-website',
     category: 'HTML / CSS / JS',
-    title: 'Carlos Website',
+    title: 'Personal Card',
     description:
-      'Personal website with a custom stylesheet and vanilla JavaScript interactions — no build step, no framework.',
+      'One-page personal card with a live age counter, randomised colour animations and a "Stop it" button that runs away from the cursor.',
     stack: ['HTML', 'CSS', 'JavaScript'],
     repoUrl: 'https://github.com/veryrareuser/carlos',
+    liveUrl: 'https://veryrareuser.github.io/carlos/',
     color: 'red',
   },
 ]

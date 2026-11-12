@@ -19,10 +19,13 @@ export const site = {
   name: 'Carlos.',
   title: 'Carlos — Portfolio',
   tagline: 'I build software that works.',
-  email: 'carlo@veryrareuser.dev',
+  email: 'carlossaragih26@gmail.com',
   location: 'Tangerang, Indonesia',
   githubUrl: 'https://github.com/veryrareuser',
   githubHandle: 'veryrareuser',
+  instagramUrl: 'https://instagram.com/_carlossaragih',
+  instagramHandle: '@_carlossaragih',
+  phone: '',
   liveUrl: 'https://veryrareuser.github.io/portfolio/',
 } as const
 
@@ -64,9 +67,9 @@ export const services: Service[] = [
 ]
 
 export const stats: Stat[] = [
-  { value: '09', label: 'Repos' },
-  { value: '06+', label: 'Languages' },
-  { value: '10+', label: 'Projects' },
+  { value: '11', label: 'Repos' },
+  { value: '07+', label: 'Languages' },
+  { value: '12+', label: 'Projects' },
   { value: '2026', label: 'Grad' },
 ]
 
@@ -95,4 +98,5 @@ export const stack: string[] = [
 export const aboutBio: string[] = [
   'I am Carlos, an Information Systems undergraduate (S1 Sistem Informasi, Universitas Pelita Harapan) based in Tangerang, Indonesia. I work in Bahasa Indonesia and English.',
   'My work sits where backend logic meets the interface: I design databases and APIs, then build the screens that use them. I care about code that stays readable, data that stays correct, and interfaces that load fast.',
+  'Most of what I build ships as a working product — a Laravel workshop system with six roles and an invoice trail, a Supabase-backed workout PWA with row-level security, a WPF desktop client on a clean OOP foundation. The rest is smaller experiments, and those are public too.',
 ]
