@@ -6,6 +6,22 @@ Live site: **https://veryrareuser.github.io/portfolio/**
 
 ---
 
+## Selected work
+
+| Project | Category | Stack |
+| --- | --- | --- |
+| [Gym Tracker](https://github.com/veryrareuser/gym-tracker) · [live](https://veryrareuser.github.io/gym-tracker/) | PWA / Fullstack | React 19, Vite, Supabase, Postgres, Recharts |
+| [MotoCare](https://github.com/veryrareuser/MotoCare) | Laravel / SaaS | PHP 8.4, Laravel, MySQL, Blade, Tailwind, Alpine.js |
+| [NICE.EAT](https://github.com/veryrareuser/nicegang) | C# / WPF | C#, .NET, WPF, XAML, SQLite |
+| [Student Task Organizer](https://github.com/veryrareuser/task-organizer) | C# / Console | C#, .NET 9 |
+| [Dark Portfolio](https://github.com/veryrareuser/glowing-fiesta) · [live](https://veryrareuser.github.io/glowing-fiesta/) | Frontend / Static | HTML, CSS, JavaScript, Canvas |
+| [Magang Portfolio](https://github.com/veryrareuser/magang) · [live](https://veryrareuser.github.io/magang/) | HTML / CSS | HTML, CSS, Bootstrap 5 |
+| [Personal Card](https://github.com/veryrareuser/carlos) · [live](https://veryrareuser.github.io/carlos/) | HTML / CSS / JS | HTML, CSS, JavaScript |
+
+Project data lives in `src/data/projects.ts` as a typed array — the cards are rendered from it, so adding a project is a one-line change.
+
+---
+
 ## Stack
 
 | Layer | Choice | Version |
@@ -129,6 +145,7 @@ All tokens live in `src/index.css` as CSS custom properties, and are re-exported
 - `prefers-reduced-motion: reduce` disables smooth scrolling and all animation.
 - The large index numbers (`01`, `02`, `03`) use `#6E6E6E` on white — **5.09:1**, which passes WCAG AA for large text. A lighter gray such as `#B8B8B8` only reaches ~2.0:1 and would fail.
 - The layout is responsive: the 3-column services strip and the 2-column work grid both collapse to a single column under 640px.
+- Contrast on every card fill is verified: black text on yellow / red / magenta (5.25:1–19.56:1), white text on blue (8.59:1) and black (21:1). Buttons on dark cards invert to keep a 21:1 ratio.
 
 ---
 
